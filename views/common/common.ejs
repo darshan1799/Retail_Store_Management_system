@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+         display: flex;
+         gap: 30px;
+         background-color: rgb(144, 242, 165);
+         justify-content: end;
+         width: 100%;
+         
+        }
+        nav a
+        {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            padding: 10px;
+            
+        }
+        nav a:nth-child(5)
+        {
+           
+            margin-right: 2%;
+        }
+        nav a:hover
+        {
+           color: blue;
+            transform: scale(1.1);
+        }
+    
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a><a href="/stocks">Stock</a><a href="/addtask">Add-Item</a><a href="/viewtask">View-Item</a><a href="/login">Login</a>
+    </nav>
+</body>
+</html>

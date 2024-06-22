@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form
+        {
+            border: 2px black solid;
+            display: flex;
+            flex-direction: column;
+            width: 25%;
+            gap: 10px;
+            padding: 30px;
+            border-radius: 6px;
+            margin: auto;
+            margin-top: 70px;
+            background-color: rgb(207, 220, 244);
+        }
+        form input
+        {
+            border: 1px red solid;
+            padding: 7px;
+            border-radius:5px;
+        }
+        form h2
+        {
+            margin-top: 10px;
+            text-align: center;
+        }
+        form a
+        {
+            text-decoration: none;
+            color: blue;
+        
+        }
+        form button
+        {
+            width: 90px;
+            padding: 5px;
+            font-size: 14px;
+            border-radius: 6px;
+            margin-top: 7px;
+            background-color: rgb(48, 234, 234);
+        }
+        form select
+        {
+            border: 1px red solid;
+            padding: 7px;
+            border-radius:5px;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('common/common')%>
+    <form action="/updatedata" method="post">
+
+            <h2>Customer-Detail Form</h2>
+            <label for="customerid">Customer-Id:</label>
+            <input type="text" name="customerid" id="customerid"  required>
+            <label for="customername">Customer-Name:</label>
+            <input type="text" name="customername" id="customername"  required>
+            <label for="email">E-mail:</label>
+            <input type="text" name="email" id="email"  required>
+            <label for="productname">Product-Name:</label>
+            <input type="text" name="productname" id="productname"  required>
+            <label for="Purchase-Date">Purchase-Date:</label>
+            <input type="date" name="Purchase-Date" id="purchasedate"  required>
+            <label for="productprice">Price:</label>
+            <input type="number" name="productprice" id="productprice"  required>
+            <label for="quantity">Qantity:</label>
+            <input type="number" name="quantity" id="quantity"  required>
+            <label for="paymentmode">Payment-Mode:</label>
+            <select name="paymentmode" id="paymentmode">
+                <option value="online" name="online">Online</option>
+                <option value="cash" name="cash">Cash</option>
+            </select>
+            <button type="submit">Edit Data</button>
+       
+    </form>
+</body>
+</html>

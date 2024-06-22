@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form
+        {
+            border: 2px black solid;
+            display: flex;
+            flex-direction: column;
+            width: 25%;
+            gap: 10px;
+            padding: 30px;
+            border-radius: 6px;
+            margin: auto;
+            margin-top: 150px;
+            background-color: rgb(207, 220, 244);
+        }
+        form input
+        {
+            border: 1px red solid;
+            padding: 7px;
+            border-radius:5px;
+        }
+        form h2
+        {
+            margin-top: 10px;
+            text-align: center;
+        }
+        form a
+        {
+            text-decoration: none;
+            color: blue;
+        
+        }
+        form button
+        {
+            width: 90px;
+            padding: 5px;
+            font-size: 14px;
+            border-radius: 6px;
+            margin-top: 7px;
+            background-color: rgb(48, 234, 234);
+        }
+    </style>
+</head>
+<body>
+    <%- include('common/common')%>
+    <form action="/logindata" method="post">
+        <h2>Login Form</h2>
+        <label for="username">UserName / email:</label>
+        <input type="text" name="username" id="username">
+        <label for="password">Password : </label>
+        <input type="text" name="password" id="password">
+        <a href="/signup">Not Registered ! signup</a>
+        <button type="submit">Log In</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        form
+        {
+            border: 2px black solid;
+            display: flex;
+            flex-direction: column;
+            width: 25%;
+            gap: 10px;
+            padding: 30px;
+            border-radius: 6px;
+            margin: auto;
+            margin-top: 100px;
+            background-color: rgb(207, 220, 244);
+        }
+        form input
+        {
+            border: 1px red solid;
+            padding: 7px;
+            border-radius:5px;
+        }
+        form h2
+        {
+            margin-top: 10px;
+            text-align: center;
+        }
+        form a
+        {
+            text-decoration: none;
+            color: blue;
+        
+        }
+        form button
+        {
+            width: 90px;
+            padding: 5px;
+            font-size: 14px;
+            border-radius: 6px;
+            margin-top: 7px;
+            background-color: rgb(48, 234, 234);
+        }
+    </style>
+</head>
+<body>
+    <%- include('common/common')%>
+    <form action="/signupdata" method="post">
+        <h2>Signup Form</h2>
+        <label for="name">Name :</label>
+        <input type="text" name="name" id="name" required>
+        <label for="email">E-mail :</label>
+        <input type="email" name="email" id="email" required>
+        <label for="username">UserName :</label>
+        <input type="text" name="username" id="username" required>
+        <label for="password">Password : </label>
+        <input type="text" name="password" id="password" required>
+        <label for="storename">Store-Name: </label>
+        <input type="text" name="storename" id="storename" required>
+        <a href="/login">Already Registered ! Log In</a>
+        <button type="submit">Sign Up</button>
+    </form>
+    
+</body>
+
+</html>
