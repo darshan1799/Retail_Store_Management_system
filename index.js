@@ -9,6 +9,7 @@ const model2 = require('./loginschema');
 const e = require('express');
 const stockmodel = require('./stockschema');
 const stockschema = require('./stockschema');
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 2000;
@@ -32,6 +33,9 @@ function verifytoken(req, res, next) {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
+let path2 = path.join(__dirname,"public");
+console.log(path2);
+app.use(express.static(path2));
 //--------------------------------------------------------------------------
 
 app.set('view engine', 'ejs');
@@ -359,7 +363,7 @@ app.post('/stockdata',verifytoken,async(req,res)=>
 }
 catch(e)
 {
-    res.send("Server Temporary Down");
+    console.log("error");
 }
 
 app.listen(port, () => {

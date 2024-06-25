@@ -1,47 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nav</title>
-    <style>
-        *
-        {
-            margin: 0;
-            padding: 0;
-        }
-        nav {
-         display: flex;
-         gap: 30px;
-         background-color: rgb(144, 242, 165);
-         justify-content: end;
-         width: 100%;
-         
-        }
-        nav a
-        {
-            text-decoration: none;
-            color: black;
-            font-size: 18px;
-            padding: 10px;
-            
-        }
-        nav a:nth-child(5)
-        {
-           
-            margin-right: 2%;
-        }
-        nav a:hover
-        {
-           color: blue;
-            transform: scale(1.1);
-        }
-    
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav</title>
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    <nav>
-        <a href="/">Home</a><a href="/stocks">Stock</a><a href="/addtask">Add-Item</a><a href="/viewtask">View-Item</a><a href="/login">Login</a>
-    </nav>
+  <nav  id="nav">
+    <a href="/">Home</a><a href="/stocks">Stock</a><a href="/addtask">Add-Item</a><a href="/viewtask">View-Item</a><a
+      href="/login">Login</a>
+    <i class="fa-solid fa-bars" type="button" id="bar"></i>
+    <!-- <i class="fa-solid fa-xmark"></i> -->
+  </nav>
+  <script>
+
+    let click = 1;
+    let icon = document.querySelector("#bar");
+    icon.addEventListener("click", function () {
+      let nav = document.querySelector("nav");
+      let a = document.querySelectorAll("a");
+      if (click == 1) {
+        icon.removeAttribute("class", "fa-solid fa-bars");
+        icon.setAttribute("class", "fa-solid fa-xmark");
+        console.log(icon)
+        nav.setAttribute("class", "nav");
+        a.forEach((el) => {
+          el.setAttribute("class", "a");
+        });
+        click++;
+        console.log(click);
+      }
+      else {
+        icon.removeAttribute("class", "fa-solid fa-xmark");
+        icon.setAttribute("class", "fa-solid fa-bars");
+        nav.removeAttribute("class", "nav");
+        a.forEach((el) => {
+          el.removeAttribute("class", "a");
+        });
+        click--;
+      }
+
+    });
+
+
+  </script>
 </body>
+
 </html>

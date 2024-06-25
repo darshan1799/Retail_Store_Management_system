@@ -1,0 +1,83 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+ display: flex;
+ gap: 30px;
+ background-color: rgb(144, 242, 165);
+ justify-content: end;
+ align-items: center;
+ width: 100%;
+}
+nav a
+{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 10px;
+    
+}
+
+/* for the responsive */
+.nav
+{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.a 
+{
+    display: inline-block;
+    text-decoration: none;
+}
+/* 
+.................. */
+nav a:nth-child(5)
+{
+   
+    margin-right: 2%;
+}
+nav a:hover
+{
+   color: blue;
+    transform: scale(1.1);
+}
+nav i
+{
+    margin-right:3% ;
+    padding: 10px;
+}
+@media   (min-width:425px) and (max-width:767px) {
+    nav{
+        gap: 1%;
+    }
+}
+@media (max-width:426px) {
+    nav a
+    {
+        display: none;
+    }
+}
+@media (min-width:426px) {
+    nav a
+    {
+        display: inline-block;    
+    }
+    #nav {
+       
+        flex-direction: row;
+        background-color: pink;
+        justify-content: end;
+        align-items: center;
+        width: 100%;
+       }
+    nav i
+    {
+     font-size: 0px;
+     padding-right: 0px;
+     display: none !important;
+    }
+}

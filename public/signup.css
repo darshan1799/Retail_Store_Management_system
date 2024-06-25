@@ -1,0 +1,51 @@
+form
+{
+    border: 2px black solid;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    gap: 10px;
+    padding: 30px;
+    border-radius: 6px;
+    margin: auto;
+    margin-top: 100px;
+    background-color: rgb(207, 220, 244);
+}
+form input
+{
+    border: 1px red solid;
+    padding: 7px;
+    border-radius:5px;
+}
+form h2
+{
+    margin-top: 10px;
+    text-align: center;
+}
+form a
+{
+    text-decoration: none;
+    color: blue;
+
+}
+form button
+{
+    width: 90px;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 6px;
+    margin-top: 7px;
+    background-color: rgb(48, 234, 234);
+}
+@media (max-width:630px) {
+    form 
+    {
+        width: 260px;
+    }
+}
+@media  (max-width:321px) {
+    form
+    {
+        width: 60%;
+    }
+}
