@@ -13,7 +13,7 @@
     <%total = 0%>
     <%profit = 0%>
     <h1><%= storename%></h1>
-        <div>
+        <div class="div">
            
             <form action="/stockdata" method="post">
                 <h2>Stocks Form</h2>
@@ -27,7 +27,10 @@
                 <input type="text" name="sellingprice" id="sellingprice" required>
                 <button type="submit">Add In Stock</button>
             </form>
+          <div>
+            <h2>Stocks-Details</h2>
             <table>
+                <thead>
                 <th>Item-Name</th>
                 <th>Stocks</th>
                 <th>Cost-Price</th>
@@ -35,6 +38,7 @@
                 <th>Sold</th>
                 <th>Income</th>
                 <th>Profit</th>
+               </thead>
                 <%data.forEach((el)=>{%>
                     <tr>
                        <%for(let i in el){%>
@@ -42,7 +46,7 @@
                                 <td colspan="7"><%= el[i]%></td> 
                            <%}else{%>
                             
-                            <td><%= el[i]%></td>
+                            <td data-label=<%=i%>:><%= el[i]%></td>
                           
                             <%if(i == "income"){%>
                                <%total += parseInt(el[i])%>
@@ -54,11 +58,25 @@
                     <%})%>
                     <tr id="last">
                         <td colspan="5">Total</td>
-                        <td><%=total%></td>
-                        <td><%=profit%></td>
+                        <td data-label="Total-income : "><%=total%></td>
+                        <td data-label="Total-Profit : "><%=profit%></td>
                     </tr>
+                    
             </table>
+            <button class="clear">Clear All Data</button>
+            </div>
         </div>
 </body>
+<script>
+    let btn = document.querySelector(".clear");
+    btn.addEventListener("click",function()
+{
+   let res =  confirm("All The Stock-Data Are Cleared ! Are You Sure?");
+  if(res)
+  {
+    window.location.href = 'http://localhost:2000/delete';
+  }
+});
+</script>
 
 </html>

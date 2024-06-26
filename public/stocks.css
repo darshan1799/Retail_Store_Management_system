@@ -2,12 +2,10 @@ form {
     border: 2px black solid;
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 350px;
     gap: 10px;
     padding: 30px;
     border-radius: 6px;
-    margin-left: 10%;
-
     background-color: rgb(207, 220, 244);
 }
 
@@ -37,20 +35,33 @@ form button {
     background-color: rgb(48, 234, 234);
 }
 
-table {
-    display: inline-block;
-}
 
-div {
+
+.div {
     display: flex;
     margin-top: 45px;
-    gap: 100px;
+    gap: 40px;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 table {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     
+}
+h2
+{
+    text-align: center;  
+}
+div:nth-child(2)
+{
+   
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 th,
@@ -73,28 +84,95 @@ table tr:nth-child(odd) {
 table tr:nth-child(even) {
     background-color: rgb(171, 239, 176);
 }
-#last
-{
+
+#last {
     background-color: rgb(21, 225, 157);
 }
-h1
-{
-color: rgb(244, 37, 185);
-margin-top: 60px;
-text-align: center;
-text-shadow: 1px 1px 10px rgb(244, 124, 124);
+
+h1 {
+    color: rgb(244, 37, 185);
+    margin-top: 60px;
+    text-align: center;
+    text-shadow: 1px 1px 10px rgb(244, 124, 124);
 
 }
 
-@media (max-width:630px) {
-    form 
-    {
-        width: 260px;
+
+@media (max-width:321px) {
+    form {
+        width: 60%;
+        padding: 10px;
+        margin-left: 2%;
+        margin-right: 2%;
     }
 }
-@media  (max-width:321px) {
-    form
+
+@media (max-width:687px) {
+    form {
+        width: 260px;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr,
+    td {
+        display: block;
+
+    }
+
+    table td::before {
+        content: attr(data-label);
+    }
+
+    table {
+        width: 80%;
+        padding: 20px;
+      
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    td:nth-child(odd) {
+        background-color: rgb(158, 227, 172);
+    }
+
+    td:nth-child(even) {
+        background-color: rgb(176, 245, 190);
+    }
+
+    tr {
+        margin-top: 20px;
+        border-radius: 10px;
+        width: 100%;
+    }
+
+    tr td:first-child {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    tr td:last-child {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    #last {
+        background-color: rgb(21, 225, 157) !important;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #last td {
+        background-color: rgb(21, 225, 157);
+        border-radius: 10px;
+    }
+    #last td:first-child
     {
-        width: 60%;
+        display: none;
     }
 }

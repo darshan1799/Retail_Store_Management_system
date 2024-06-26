@@ -3,12 +3,12 @@ form
     border: 2px black solid;
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 350px;
     gap: 10px;
     padding: 30px;
     border-radius: 6px;
     margin: auto;
-    margin-top: 70px;
+    margin-top: 30px;
     background-color: rgb(207, 220, 244);
 }
 form input
@@ -21,6 +21,7 @@ form h2
 {
     margin-top: 10px;
     text-align: center;
+    margin-bottom: 20px;
 }
 form a
 {
@@ -49,4 +50,21 @@ p
     color: red;
     margin-top: 0px;
     margin-bottom: 0px;
+}
+h2
+{
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+@media (max-width:630px) {
+    form 
+    {
+        width: 260px;
+    }
+}
+@media  (max-width:321px) {
+    form
+    {
+        width: 60%;
+    }
 }

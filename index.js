@@ -52,7 +52,27 @@ app.get('/signup', (req, res) => {
 app.get('/editdata', (req, res) => {
     res.render('edit');
 });
-
+app.get('/delete',verifytoken,async (req,res)=>
+{
+    const model = require('./userschema');
+    let username = await model.find({ email: req.username });
+    let username2 = await model.find({ username: req.username });
+    if (username.toString() != [].toString()) {
+        username = username[0].username;
+    }
+    else {
+        username = username2[0].username;
+    }
+    let data =await stockmodel.find({username:username});
+    if(data.toString() != [].toString())
+        {
+           let stockarray = data[0].stockarray;
+           let finalstockarray = [];
+           let res = await stockmodel.updateOne({username:username},{$set:{stockarray:finalstockarray}});
+         console.log(res);
+        }
+   res.redirect('/stocks');
+});
 
 //-------------Sign Up Part----------------------------------------------------------
 app.post('/signupdata', async (req, res) => {
@@ -287,7 +307,7 @@ app.get('/stocks',verifytoken,async (req,res)=>
         {
      data = user[0].stockarray;
         }
-        else
+         if(data.toString() == [].toString())
         {
             data = [{err:"No Product Found"}];
         }
