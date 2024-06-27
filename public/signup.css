@@ -37,6 +37,7 @@ form button
     margin-top: 7px;
     background-color: rgb(48, 234, 234);
 }
+
 @media (max-width:630px) {
     form 
     {

@@ -1,15 +1,17 @@
 form
 {
-    border: 2px black solid;
+    
     display: flex;
     flex-direction: column;
     width: 350px;
     gap: 10px;
-    padding: 30px;
-    border-radius: 6px;
+    padding: 40px;
+    border-radius: 16px;
     margin: auto;
     margin-top: 30px;
-    background-color: rgb(207, 220, 244);
+    background-color: #f2f2f2;
+    box-shadow: 0px 1px 2px #1a237e;
+    color: #1a237e;
 }
 form input
 {
@@ -53,9 +55,12 @@ p
 }
 h2
 {
-    margin-top: 20px;
+    margin-top: 120px;
     margin-bottom: 0px;
+    color: darkblue;
+    
 }
+
 @media (max-width:630px) {
     form 
     {

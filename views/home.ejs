@@ -3,12 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task - List</title>
-   <link rel="stylesheet" href="home.css">
-    
+    <title>Retail Store Management System</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <%- include('common/common')%>
-    <h1>Home Page</h1>
+    <header>
+        <h1>Welcome to Retail Store Management System</h1>
+        <p>Hello, [User Name]! Manage your retail store efficiently.</p>
+    </header>
+
+    <main>
+        <section id="inventory">
+            <h2>Manage Your Inventory</h2>
+            <div class="section-content">
+                <h3>Add Stock</h3>
+                <p>
+                    Enter the details of new stock items:
+                    <ul>
+                        <li>Name</li>
+                        <li>Quantity</li>
+                        <li>Cost Price</li>
+                        <li>Selling Price</li>
+                    </ul>
+                    Click "Add Stock" to add items to the database.
+                </p>
+            </div>
+        </section>
+
+        <section id="tasks">
+            <h2>Add Customer Task</h2>
+            <div class="section-content">
+                <h3>Add Task</h3>
+                <p>
+                    Enter the following customer details:
+                    <ul>
+                        <li>Customer Name</li>
+                        <li>Email</li>
+                        <li>Product Name (must be available in stocks)</li>
+                        <li>Selling Price</li>
+                        <li>Quantity (if available in stocks)</li>
+                        <li>Payment Method</li>
+                    </ul>
+                    Click "Add Task" to save the customer and purchase details.
+                </p>
+            </div>
+        </section>
+
+        <section id="sales">
+            <h2>Monitor Your Sales and Profits</h2>
+            <div class="section-content">
+                <h3>Stocks</h3>
+                <p>
+                    View all available stock items in a table format.<br>
+                    Track quantity, cost price, and selling price of each item.<br>
+                    Calculate total income and profit generated from sales.<br>
+                    Ensure stock availability before recording any sales entries.
+                </p>
+            </div>
+        </section>
+    </main>
+  <%- include ('common/footer')%>
+    
 </body>
 </html>

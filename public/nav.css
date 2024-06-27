@@ -7,15 +7,21 @@
 nav {
  display: flex;
  gap: 30px;
- background-color: rgb(144, 242, 165);
+ background:#2ecc71;
  justify-content: end;
  align-items: center;
- width: 100%;
+ width: 90%;
+ position: fixed;
+ padding: 10px;
+ left: 4%;
+ border-radius: 15px;
+ top: 2%;
+ z-index: 10;
 }
 nav a
 {
     text-decoration: none;
-    color: black;
+    color: aliceblue;
     font-size: 18px;
     padding: 10px;
     
@@ -32,6 +38,10 @@ nav a
 {
     display: inline-block;
     text-decoration: none;
+}
+nav i
+{
+    color: aliceblue;
 }
 /* 
 .................. */
@@ -55,13 +65,17 @@ nav i
         gap: 1%;
     }
 }
-@media (max-width:426px) {
+@media (max-width:466px) {
     nav a
     {
         display: none;
     }
+    nav
+    {
+        position: fixed;
+    }
 }
-@media (min-width:426px) {
+@media (min-width:466px) {
     nav a
     {
         display: inline-block;    
@@ -69,15 +83,16 @@ nav i
     #nav {
        
         flex-direction: row;
-        background-color: pink;
+        
         justify-content: end;
         align-items: center;
-        width: 100%;
+      
        }
     nav i
     {
      font-size: 0px;
      padding-right: 0px;
+     color: white !important;
      display: none !important;
     }
 }
