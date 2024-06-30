@@ -1,98 +1,140 @@
-*
-{
+* {
     margin: 0;
     padding: 0;
 }
 
 nav {
- display: flex;
- gap: 30px;
- background:#2ecc71;
- justify-content: end;
- align-items: center;
- width: 90%;
- position: fixed;
- padding: 10px;
- left: 4%;
- border-radius: 15px;
- top: 2%;
- z-index: 10;
+    display: flex;
+    gap: 30px;
+    background-color: #29d671;
+   
+    justify-content: end;
+    align-items: center;
+    width: 90%;
+    position: fixed;
+    padding: 10px;
+    left: 4%;
+    right: 4%;
+    border-radius: 15px;
+    top: 2%;
+    z-index: 10;
 }
-nav a
-{
+
+nav a {
     text-decoration: none;
-    color: aliceblue;
+    color: black;
     font-size: 18px;
     padding: 10px;
-    
+
 }
 
 /* for the responsive */
-.nav
-{
+/* .nav {
     display: flex;
-    flex-direction: column;
+   
+    flex-direction: row;
     gap: 5px;
-}
-.a 
-{
+  
+} */
+
+.a {
     display: inline-block;
     text-decoration: none;
 }
-nav i
-{
+
+nav i {
     color: aliceblue;
 }
+
 /* 
 .................. */
-nav a:nth-child(5)
-{
-   
+nav a:nth-child(5) {
+
     margin-right: 2%;
 }
-nav a:hover
-{
-   color: blue;
+
+nav a:hover {
+    color: blue;
     transform: scale(1.1);
 }
-nav i
-{
-    margin-right:3% ;
+
+nav i {
+    margin-right: 3%;
     padding: 10px;
 }
-@media   (min-width:425px) and (max-width:767px) {
-    nav{
-        gap: 1%;
-    }
+.navheight
+{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
+.fa-xmark
+{
+    position: absolute;
+    top: 2%;
+    right: 3%;
+}
+.scrollbar
+{
+    overflow: hidden;
+}
+
+
+
 @media (max-width:466px) {
-    nav a
-    {
+    nav a {
         display: none;
+        width: 100%;
+        text-align: center;
     }
-    nav
+
+    nav {
+      margin: 0px; 
+      position: fixed;
+      right: 0%;
+      left: 0%;
+      width: 100%;
+      top: 0%;
+      border-radius: 0px;
+    }
+    nav i 
     {
-        position: fixed;
+        padding-right: 3%;
     }
 }
+
 @media (min-width:466px) {
-    nav a
-    {
-        display: inline-block;    
-    }
-    #nav {
-       
-        flex-direction: row;
+    nav a {
+        display: inline-block;
         
+    }
+
+    #nav {
+        height: auto;
+        flex-direction: row;
         justify-content: end;
         align-items: center;
-      
-       }
-    nav i
+       
+
+    }
+
+    nav i {
+        font-size: 0px;
+        padding-right: 0px;
+        color: white !important;
+        display: none !important;
+    }
+}
+@media (min-width:465px) and (max-width:581px) {
+    nav
     {
-     font-size: 0px;
-     padding-right: 0px;
-     color: white !important;
-     display: none !important;
+        gap: 6px;
+    }
+    nav a 
+    {
+        font-size: 16px;
     }
 }

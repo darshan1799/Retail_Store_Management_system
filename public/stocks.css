@@ -1,14 +1,32 @@
+body
+{
+    background: linear-gradient(135deg, rgba(215, 242, 189, 0.8), rgba(143, 190, 228, 0.8), rgba(140, 220, 201, 0.8), rgba(203, 144, 153, 0.8));
+}
 form {
-    border: 2px black solid;
+    
     display: flex;
     flex-direction: column;
     width: 350px;
     gap: 10px;
     padding: 30px;
     border-radius: 6px;
-    background-color: rgb(207, 220, 244);
+    background-color: rgba(204, 212, 225, 0.2);
+    box-shadow: 3px 3px 8px grey;
+    animation: formani 3s;
 }
-
+@keyframes formani
+{
+    0%
+    {
+        opacity: 0;
+        margin-top: 10px;
+    }
+    100%
+    {
+        margin-top: 0px;
+        opacity: 1;
+    }
+}
 form input {
     border: 1px red solid;
     padding: 7px;
@@ -78,7 +96,7 @@ th {
 }
 
 table tr:nth-child(odd) {
-    background-color: rgb(186, 222, 210);
+    background-color: rgb(112, 224, 187);
 }
 
 table tr:nth-child(even) {
@@ -90,12 +108,43 @@ table tr:nth-child(even) {
 }
 
 h1 {
-    color: rgb(244, 37, 185);
+    color: rgb(10, 10, 10);
     margin-top: 120px;
     text-align: center;
-    text-shadow: 1px 1px 10px rgb(244, 124, 124);
+    text-shadow: 1px 1px 2px rgb(244, 124, 124);
+    animation: toptobottom 3s,borderradius 5s infinite;
     
-
+}
+@keyframes borderradius {
+    0%
+    {
+        
+        color: rgb(63, 96, 63);
+        transform: rotateX(-360deg);
+       
+    }
+   
+    100%
+    {
+       
+         color: rgb(58, 4, 252);
+        transform: rotateX(0deg);
+       
+    }
+    
+}
+@keyframes toptobottom {
+    0%
+    {
+        opacity: 0;
+        margin-top: 80px;
+    }
+    100%
+    {
+       
+        margin-top: 120px;
+        opacity: 1;
+    }
 }
 
 

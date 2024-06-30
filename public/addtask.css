@@ -1,3 +1,7 @@
+body
+{
+    background: linear-gradient(135deg, rgba(215, 242, 189, 0.8), rgba(143, 190, 228, 0.8), rgba(140, 220, 201, 0.8), rgba(203, 144, 153, 0.8));
+}
 form
 {
     
@@ -6,12 +10,30 @@ form
     width: 350px;
     gap: 10px;
     padding: 40px;
-    border-radius: 16px;
+    border-radius: 10px;
     margin: auto;
     margin-top: 30px;
-    background-color: #f2f2f2;
-    box-shadow: 0px 1px 2px #1a237e;
-    color: #1a237e;
+    background-color: rgba(204, 218, 231, 0.2);
+    border: 0;
+    box-shadow: 4px 4px 8px #3fbe5b;
+    color: #0c0c0c;
+    margin-bottom: 50px;
+    animation: fade 3s;
+}
+@keyframes fade {
+    0%
+    {
+       
+        margin-top: 10px;
+        opacity: 0;
+    }
+    100%
+    {
+       
+        margin-top: 30px;
+        opacity: 1;
+    }
+    
 }
 form input
 {
@@ -33,12 +55,16 @@ form a
 }
 form button
 {
-    width: 90px;
-    padding: 5px;
+   
+    padding: 7px;
     font-size: 14px;
     border-radius: 6px;
     margin-top: 7px;
-    background-color: rgb(48, 234, 234);
+    background-color: rgba(21, 12, 180, 0.4);
+    color: white;
+    border: 0;
+    box-shadow: 2px 2px 9px rgb(24, 24, 24);
+    
 }
 form select
 {
@@ -53,13 +79,57 @@ p
     margin-top: 0px;
     margin-bottom: 0px;
 }
-h2
+div
+{
+    display: inline-block;
+    padding: 0;
+    overflow: hidden;
+    margin-left: 2.7%;
+}
+.h2
 {
     margin-top: 120px;
     margin-bottom: 0px;
+    margin-left: 23px;
+    font-size: 30px;
     color: darkblue;
+    text-wrap: nowrap;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 7px orange solid;
+    animation: shade 7s infinite,lineblink 0.6s infinite,blink infinite 3s;
+
+   
+}
+@keyframes lineblink
+{
+    0%
+    {
+        border-right: orange 7px solid;
+    }
+    50%
+    {
+        border: transparent;
+    }
+}
+@keyframes shade {
+  from{width:35%;}
+  to{width: 100%;}
     
 }
+@keyframes blink {
+    0%
+    {
+    
+   text-shadow: 4px 4px 5px rgba(7, 248, 23, 0.58);
+   
+    }
+    100%
+    {text-shadow: transparent;
+    
+    }
+}
+
 
 @media (max-width:630px) {
     form 

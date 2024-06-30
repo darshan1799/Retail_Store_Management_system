@@ -25,11 +25,14 @@
     icon.addEventListener("click", function () {
       let nav = document.querySelector("nav");
       let a = document.querySelectorAll("a");
+      let body = document.querySelector("body");
       if (click == 1) {
         icon.removeAttribute("class", "fa-solid fa-bars");
         icon.setAttribute("class", "fa-solid fa-xmark");
         console.log(icon)
-        nav.setAttribute("class", "nav");
+     
+        nav.setAttribute("class", "navheight");
+       
         a.forEach((el) => {
           el.setAttribute("class", "a");
         });
@@ -39,7 +42,8 @@
       else {
         icon.removeAttribute("class", "fa-solid fa-xmark");
         icon.setAttribute("class", "fa-solid fa-bars");
-        nav.removeAttribute("class", "nav");
+       
+        nav.removeAttribute("class", "navheight");
         a.forEach((el) => {
           el.removeAttribute("class", "a");
         });

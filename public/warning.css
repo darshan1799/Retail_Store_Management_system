@@ -4,5 +4,20 @@ h1
     margin: auto;
     text-align: center;
     margin-top: 240px;
-
+    animation: fade 3s;
+    
+}
+@keyframes fade {
+    0%
+    {
+       margin-top: 210px;  
+        opacity: 0;
+    }
+    100%
+    {
+        margin-top: 240px;
+        
+        opacity: 1;
+    }
+    
 }
