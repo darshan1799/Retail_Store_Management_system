@@ -64,11 +64,28 @@
         const itemprice = <%- JSON.stringify(itemprice) %>;
         const itemstock = <%- JSON.stringify(itemstock) %>;
         let item = document.querySelector("#productname");
+        if(item.value == "Select an Item")
+        {
+          let p = document.querySelector("p");
+          let btn = document.querySelector("button");
+          let inp = document.querySelector("#quantity");
+          
+          inp.setAttribute("placeholder","Please Select An Item");
+          inp.setAttribute("disabled","true");
+          btn.setAttribute("disabled","true");
+
+        }
+        else
+        {
+
+
+        }
         item.addEventListener("change",function()
-      {
+
+        
+      {  
 
        let index =parseInt(itemname.indexOf(this.value));
-       
        console.log((index));
        let productprice = document.querySelector("#productprice");
        let quantity = document.querySelector("#quantity");
@@ -107,6 +124,7 @@
     });
 
       });
+    
     </script>
     
 </body>
