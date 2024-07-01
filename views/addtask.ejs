@@ -66,9 +66,16 @@
             </form>
 
             <script>
-              const itemname = <% - JSON.stringify(items) %>;
-              const itemprice = <% - JSON.stringify(itemprice) %>;
-              const itemstock = <% - JSON.stringify(itemstock) %>;
+              try
+              {
+              const itemname = <%- JSON.stringify(items) %>;
+              const itemprice = <%- JSON.stringify(itemprice) %>;
+              const itemstock = <%- JSON.stringify(itemstock) %>;
+              }
+              catch(e)
+              {
+                console.log("Eroor");
+              }
               let item = document.querySelector("#productname");
               if (item.value == "Select an Item") {
                 let p = document.querySelector("p");
@@ -90,7 +97,7 @@
                 let quantity = document.querySelector("#quantity");
                 let price = itemprice[index] || 0;
                 let finalitemstock = parseInt(itemstock[index]) || 0;
-
+          
                 let btn = document.querySelector("button");
                 productprice.setAttribute("value", price);
                 quantity.setAttribute("placeholder", `Available Stock - ${finalitemstock}`);
