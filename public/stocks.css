@@ -7,6 +7,7 @@ form {
     display: flex;
     flex-direction: column;
     width: 350px;
+    
     gap: 10px;
     padding: 30px;
     border-radius: 6px;
@@ -120,7 +121,7 @@ h1 {
     {
         
         color: rgb(63, 96, 63);
-        transform: rotateX(-360deg);
+        /* transform: rotateX(-360deg); */
        
     }
    
@@ -128,7 +129,7 @@ h1 {
     {
        
          color: rgb(58, 4, 252);
-        transform: rotateX(0deg);
+        /* transform: rotateX(0deg); */
        
     }
     
