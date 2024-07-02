@@ -70,10 +70,15 @@
 
         </table>
         <script>
-        let buttons = document.querySelectorAll("i");
+        let buttons = document.querySelectorAll(".fa-trash");
         let body = document.querySelector("body");
         buttons.forEach(function (el) {
+       
+
             el.addEventListener("click", async function() {
+                let res = confirm("Are You Sure For Delete This Record😊??");
+               if(res)
+               { 
                  let k = this.getAttribute("id");
                  let form = document.createElement("form");
                  form.method = 'post';
@@ -86,6 +91,7 @@
                  form.hidden = "true";
                  document.body.appendChild(form);
                  form.submit();
+               }
             });
         });
     </script>
