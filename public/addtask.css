@@ -94,7 +94,6 @@ p
     margin-bottom: 0px;
     font-size: 30px;
     color: darkblue;
-    border-right: 7px orange solid;
     animation: shade 7s infinite,lineblink 0.6s infinite,blink infinite 3s;
     margin-left: 4%;
    

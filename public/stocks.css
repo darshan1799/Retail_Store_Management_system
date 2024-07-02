@@ -20,11 +20,10 @@ form {
     0%
     {
         opacity: 0;
-        margin-top: 10px;
+       
     }
     100%
-    {
-        margin-top: 0px;
+    {  
         opacity: 1;
     }
 }
@@ -138,12 +137,12 @@ h1 {
     0%
     {
         opacity: 0;
-        margin-top: 80px;
+        
     }
     100%
     {
        
-        margin-top: 120px;
+        
         opacity: 1;
     }
 }

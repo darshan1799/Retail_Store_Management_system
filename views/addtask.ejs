@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Add Item</title>
+  
   <link rel="stylesheet" href="addtask.css">
 </head>
 
@@ -12,14 +13,15 @@
   <%- include('common/common')%>
 
     <div>
-      <h2 class="h2">Welcome , <%=idname.name%></h2>
-      
+      <h2 class="h2">Welcome , <%=idname.name%>
+      </h2>
+
     </div>
     <%let items=[];%>
       <%let itemprice=[];%>
         <%let itemstock=[];%>
           <%let date=new Date();%>
-
+            
 
             <form action="/taskpagedata" method="post">
 
@@ -66,38 +68,22 @@
             </form>
 
             <script>
-              try
-              {
+
               const itemname = <%- JSON.stringify(items) %>;
               const itemprice = <%- JSON.stringify(itemprice) %>;
               const itemstock = <%- JSON.stringify(itemstock) %>;
-              }
-              catch(e)
-              {
-                console.log("Eroor");
-              }
+
               let item = document.querySelector("#productname");
-              if (item.value == "Select an Item") {
-                let p = document.querySelector("p");
-                let btn = document.querySelector("button");
-                let inp = document.querySelector("#quantity");
 
-                inp.setAttribute("placeholder", "Please Select An Item");
-                inp.setAttribute("disabled", "true");
-                btn.setAttribute("disabled", "true");
 
-              }
-              else {
-              }
               item.addEventListener("change", function () {
-
                 let index = parseInt(itemname.indexOf(this.value));
-                console.log((index));
+                // console.log((index));
                 let productprice = document.querySelector("#productprice");
                 let quantity = document.querySelector("#quantity");
                 let price = itemprice[index] || 0;
                 let finalitemstock = parseInt(itemstock[index]) || 0;
-          
+
                 let btn = document.querySelector("button");
                 productprice.setAttribute("value", price);
                 quantity.setAttribute("placeholder", `Available Stock - ${finalitemstock}`);
@@ -111,7 +97,7 @@
                   btn.removeAttribute("disabled");
                 }
                 quantity.addEventListener("input", function () {
-                  console.log(this.value);
+                  // console.log(this.value);
                   let val = parseInt(this.value);
                   let p = document.querySelector("p");
                   if (this.value > finalitemstock) {
@@ -125,6 +111,18 @@
                 });
 
               });
+
+              if (item.value == "Select an Item") {
+
+                let p = document.querySelector("p");
+                let btn = document.querySelector("button");
+                let inp = document.querySelector("#quantity");
+
+                inp.setAttribute("placeholder", "Please Select An Item");
+                inp.setAttribute("disabled", "true");
+                btn.setAttribute("disabled", "true");
+
+              }
 
             </script>
 

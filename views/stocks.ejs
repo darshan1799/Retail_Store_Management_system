@@ -4,79 +4,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Stocks</title>
     <link rel="stylesheet" href="stocks.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <%- include('common/common')%>
-    <%total = 0%>
-    <%profit = 0%>
-    <h1><%= storename%></h1>
-        <div class="div">
-           
-            <form action="/stockdata" method="post">
-                <h2>Stocks Form</h2>
-                <label for="productname">productname</label>
-                <input type="text" name="itemname" id="productname" required>
-                <label for="quantity">quantity : </label>
-                <input type="text" name="quantity" id="quantity" required>
-                <label for="cost-price">Costprice : </label>
-                <input type="text" name="costprice" id="cost-price" required>
-                <label for="sellingprice">sellingprice : </label>
-                <input type="text" name="sellingprice" id="sellingprice" required>
-                <button type="submit">Add In Stock</button>
-            </form>
-          <div>
-            <h2>Stocks-Details</h2>
-            <table>
-                <thead>
-                <th>Item-Name</th>
-                <th>Stocks</th>
-                <th>Cost-Price</th>
-                <th>sellingprice</th>
-                <th>Sold</th>
-                <th>Income</th>
-                <th>Profit</th>
-               </thead>
-                <%data.forEach((el)=>{%>
-                    <tr>
-                       <%for(let i in el){%>
-                            <%if(i == "err"){%>
-                                <td colspan="7"><%= el[i]%></td> 
-                           <%}else{%>
-                            
-                            <td data-label=<%=i%>:><%= el[i]%></td>
-                          
-                            <%if(i == "income"){%>
-                               <%total += parseInt(el[i])%>
-                                <%}else if(i == "profit"){%>
-                                    <%profit += parseInt(el[i])%>
-                                 <%}%>      
-                        <%}}%>
-                    </tr>
-                    <%})%>
-                    <tr id="last">
-                        <td colspan="5">Total</td>
-                        <td data-label="Total-income : "><%=total%></td>
-                        <td data-label="Total-Profit : "><%=profit%></td>
-                    </tr>
-                    
-            </table>
-            
-            </div>
-        </div>
+        <%total=0%>
+            <%profit=0%>
+                <h1>
+                    <%= storename%>
+                </h1>
+                <div class="div">
+
+                    <form action="/stockdata" method="post">
+                        <h2>Stocks Form</h2>
+                        <label for="productname">productname</label>
+                        <input type="text" name="itemname" id="productname" required>
+                        <label for="quantity">quantity : </label>
+                        <input type="number" name="quantity" id="quantity" required>
+                        <label for="cost-price">Costprice : </label>
+                        <input type="text" name="costprice" id="cost-price" required>
+                        <label for="sellingprice">sellingprice : </label>
+                        <input type="text" name="sellingprice" id="sellingprice" required>
+                        <button type="submit">Add In Stock</button>
+                    </form>
+                    <div>
+                        <h2>Stocks-Details</h2>
+                        <table>
+                            <thead>
+                                <th>Item-Name</th>
+                                <th>Stocks</th>
+                                <th>Cost-Price</th>
+                                <th>sellingprice</th>
+                                <th>Sold</th>
+                                <th>Income</th>
+                                <th>Profit</th>
+                                <th>Delete</th>
+                            </thead>
+                            <%data.forEach((el)=>{%>
+                                <tr>
+                                    <%for(let i in el){%>
+                                        <%if(i=="err" ){%>
+                                            <td colspan="8">
+                                                <%= el[i]%>
+                                            </td>
+                                            <%}else{%>
+                                                <%if(i=="button" ){%>
+                                                    <!-- <td><button class=<%=el[i]%>>Delete</button></td> -->
+                                                    <td><i class="fa-solid fa-trash" type="button" id=<%=el[i]%>></i></td>
+                                                    <%}else{%>
+                                                        <td data-label=<%=i%>:><%= el[i]%>
+                                                        </td>
+                                                        <%}%>
+
+                                                            <%if(i=="income" ){%>
+                                                                <%total +=parseInt(el[i])%>
+                                                                    <%}else if(i=="profit" ){%>
+                                                                        <%profit +=parseInt(el[i])%>
+                                                                            <%}%>
+                                                                                <%}}%>
+                                </tr>
+                                <%})%>
+                                    <tr id="last">
+                                        <td colspan="5">Total</td>
+                                        <td data-label="Total-income : ">
+                                            <%=total%>
+                                        </td>
+                                        <td data-label="Total-Profit : ">
+                                            <%=profit%>
+                                        </td>
+                                    </tr>
+
+                        </table>
+
+                    </div>
+                </div>
 </body>
 <script>
-    let btn = document.querySelector(".clear");
-    btn.addEventListener("click",function()
-{
-   let res =  confirm("All The Stock-Data Are Cleared ! Are You Sure?");
-  if(res)
-  {
-    window.location.href = 'http://localhost:2000/delete';
-  }
-});
+    let buttons = document.querySelectorAll("i");
+    let body = document.querySelector("body");
+    buttons.forEach(function (el) {
+        el.addEventListener("click", async function() {
+             let k = this.getAttribute("id");
+             let form = document.createElement("form");
+             form.method = 'post';
+             form.action = '/deletedata';
+             let inp = document.createElement("input");
+             inp.name = "data";
+             inp.value = k;
+             form.appendChild(inp);
+             form.setAttribute("display","none");
+             form.hidden = "true";
+             document.body.appendChild(form);
+             form.submit();
+        });
+    });
 </script>
 
 </html>
