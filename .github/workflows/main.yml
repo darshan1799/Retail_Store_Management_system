@@ -1,0 +1,10 @@
+name: Scheduled Task
+'on':
+  schedule:
+    - cron: '* * * * *'
+jobs:
+  run-task:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Render Server
+        run: 'curl -X POST https://your-render-server-url.com/your-endpoint'
