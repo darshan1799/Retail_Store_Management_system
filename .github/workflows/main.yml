@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Render Server
-        run: 'curl -X POST https://your-render-server-url.com/your-endpoint'
+        run: 'curl -X POST https://agrierp-backand-server.onrender.com'
