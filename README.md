@@ -6,6 +6,12 @@
 **Tech Stack:** Node.js | Express.js | MongoDB | Render
 
 ---
+## 🧠 About This Project
+This is my first project created while learning Node.js. I wanted to build something useful on my own, and ShopSpot helped me understand the basics of backend development, routing, authentication, and databases.
+
+I’m excited to keep learning and improve this project in the future.
+
+---
 
 ### 📌 Overview
 
