@@ -3,6 +3,8 @@
 ## 🛍️ ShopSpot – Retail Store Management
 
 **Live Demo:** [http://shopspot.onrender.com/](http://shopspot.onrender.com/)
+
+--
 **Tech Stack:** Node.js | Express.js | MongoDB | Render
 
 ---
